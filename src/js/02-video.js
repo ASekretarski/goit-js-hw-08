@@ -14,4 +14,12 @@ player.on('timeupdate', (event) => {
     throttled(event)
 })
 
-player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+
+
+function getTime() {
+    if (localStorage.getItem("videoplayer-current-time") !== null) {
+        player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+    }
+}
+
+getTime()
